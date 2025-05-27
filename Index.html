@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhmmed Zayan | Full-Stack Engineer</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7ie1FEzMd+TNuwqX1GNNzBbVfpE0F5IevkHZf2bzO1m9I6JUYTbi6hpLQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    :root {
+      --clr-primary: #2575fc;
+      --clr-secondary: #6a11cb;
+      --clr-light: #f0f4f8;
+      --clr-dark: #222;
+      --clr-gray: #555;
+      --radius-lg: 2rem;
+      --transition: 0.3s ease;
+      --ff-base: "Inter", sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: var(--ff-base);
+      line-height: 1.6;
+      color: var(--clr-dark);
+      background: var(--clr-light);
+      scroll-behavior: smooth;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+    header.hero {
+      background: linear-gradient(135deg, var(--clr-secondary), var(--clr-primary));
+      text-align: center;
+      padding: 5rem 1rem;
+      color: #fff;
+      border-bottom-left-radius: var(--radius-lg);
+      border-bottom-right-radius: var(--radius-lg);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero .role {
+      font-size: 1.2rem;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+    nav.social-links {
+      margin-top: 1.5rem;
+    }
+    nav.social-links a {
+      margin: 0 0.75rem;
+      color: #fff;
+      font-weight: 600;
+      transition: color var(--transition);
+      text-decoration: none;
+    }
+    nav.social-links a:hover {
+      color: #ffd166;
+    }
+    section {
+      padding: 4rem 0;
+    }
+    h2 {
+      font-size: 2rem;
+      color: var(--clr-dark);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.3rem;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: var(--clr-primary);
+      bottom: 0;
+      left: 0;
+    }
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #444;
+      text-align: center;
+    }
+    /* Projects */
+    .projects .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: default;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--clr-secondary);
+    }
+    .project-card p {
+      color: var(--clr-gray);
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .project-card a {
+      color: var(--clr-primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .project-card a:hover {
+      color: var(--clr-secondary);
+    }
+    /* Slight tilt on second project for personality */
+    .project-card:nth-child(2) {
+      background: #f7f9fc;
+      transform: rotate(-0.3deg);
+    }
+    /* Skills */
+    .skills .skill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .skill-list li {
+      background: var(--clr-primary);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      cursor: default;
+      transition: background var(--transition);
+    }
+    .skill-list li:hover {
+      background: var(--clr-secondary);
+    }
+    /* Contact */
+    .contact p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--clr-dark);
+    }
+    .contact a {
+      color: var(--clr-primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .contact a:hover {
+      color: var(--clr-secondary);
+    }
+    .contact .social-links {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .contact .social-links a {
+      margin: 0 0.75rem;
+      font-size: 1.2rem;
+      color: var(--clr-secondary);
+      transition: color var(--transition);
+    }
+    .contact .social-links a:hover {
+      color: var(--clr-primary);
+    }
+    /* Footer */
+    footer {
+      background: var(--clr-primary);
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero .role {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <img src="\PersonalPicture" alt="Muhmmed Zayan" class="avatar" />
+      <h1>Muhmmed Zayan</h1>
+      <p class="role">Full-Stack Engineer | 15 years old</p>
+      <nav class="social-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Hello! I’m <strong>Muhmmed Zayan</strong>, a passionate
+        <em>full-stack engineer</em> who loves crafting modern web apps. I
+        thrive on solving complex problems and constantly breaking things only
+        to fix them again. 🚀
+      </p>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="project-card">
+          <h3>Weather App</h3>
+          <p>
+            Built with HTML, CSS, and some questionable JavaScript magic. It
+            tells you if you need an umbrella or just cry indoors.
+          </p>
+          <a
+            href="https://github.com/muhmmedzayan/project-a"
+            target="_blank"
+            rel="noopener"
+            >See site <i class="fas fa-external-link-alt"></i
+          ></a>
+        </article>
+        <article class="project-card">
+          <h3>Portfolio Site</h3>
+          <p>
+            This site! Still tweaking, but hey, it’s alive and kicking. WIP ;)
+             just like me.
+          </p>
+          <a
+            href="https://github.com/muhmmedzayan/project-b"
+            target="_blank"
+            rel="noopener"
+            >WIP ;) <i class="fas fa-external-link-alt"></i
+          ></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skill-list">
+        <li>HTML &amp; CSS</li>
+        <li>JavaScript &amp; TypeScript</li>
+        <li>React &amp; Next.js</li>
+        <li>Node.js &amp; Express</li>
+        <li>Python &amp; Django</li>
+        <li>MongoDB &amp; SQL</li>
+        <li>Git &amp; GitHub</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Feel free to reach out via email:</p>
+      <p><a href="mailto:muhmmedzayan@gmail.com">muhmmedzayan@gmail.com</a></p>
+      <div class="social-links">
+        <a
+          href="https://github.com/muhmmedzayan"
+          target="_blank"
+          rel="noopener"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    2025 Muhmmed Zayan. Literally nothing reserved. Copy with credits if you
+    want to :P
+  </footer>
+</body>
+</html>
